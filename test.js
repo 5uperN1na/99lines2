@@ -26,16 +26,16 @@ window.addEventListener('DOMContentLoaded', function () {
     //H1 CREATION
     let h1Div = document.createElement('div');
     let h1 = document.createElement('h1');
-   
+
     let h1Text = document.createTextNode('My Singing Friends!');
     h1.appendChild(h1Text);
     h1Div.appendChild(h1);
     divContainer.appendChild(h1Div);
-    //div.className = 'h1';
+    h1.className = 'h1';
 
-    let div = document.createElement('div');
-    div.className = 'friend';
-    divContainer.appendChild(div);
+    //let div = document.createElement('div');
+    //div.className = 'friend';
+    //divContainer.appendChild(div);
 
 
     //global variables 
@@ -54,7 +54,7 @@ window.addEventListener('DOMContentLoaded', function () {
             //storing name from array in variable
             name = friendsName[j]
 
-
+            div.className = 'friend';
             let h3Div = document.createElement('div');
             let h3 = document.createElement('h3');
             let h3Friend = document.createTextNode(name);
