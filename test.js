@@ -1,4 +1,4 @@
-//BACK UP SCRIPT
+//testing--removing divs to try and find out what is wrong with my loops.
 
 
 window.addEventListener('DOMContentLoaded', function () {
@@ -26,35 +26,34 @@ window.addEventListener('DOMContentLoaded', function () {
     //H1 CREATION
     let h1Div = document.createElement('div');
     let h1 = document.createElement('h1');
+   
     let h1Text = document.createTextNode('My Singing Friends!');
     h1.appendChild(h1Text);
     h1Div.appendChild(h1);
     divContainer.appendChild(h1Div);
+    //div.className = 'h1';
+
+    let div = document.createElement('div');
+    div.className = 'friend';
+    divContainer.appendChild(div);
+
 
     //global variables 
     var i;
     var j;
-    var name = '';
+    var name;
 
-    let lyrics = '';
-    let lyrics1 = '';
+    //array that lists friend's name.
+    var friendsName = ['Erica', 'David', 'Meredith', 'Hernan', 'Ashley'];
 
-
-    //let div = document.createElement('div');
-    //div.className = 'friend';
-    //divContainer.appendChild(div);
-
-
-
+    //created event listener when button clicked, it pulls each name and stores in h3 tag then lyrics of song in a p tag.
     divBtn.addEventListener('click', function () {
 
         //outer loop-to loop through friends in friend array
-
-        var friendsName = ['Erica', 'David', 'Meredith', 'Hernan', 'Ashley'];
-
-
         for (j = 0; j < friendsName.length; j++) {
+            //storing name from array in variable
             name = friendsName[j]
+
 
             let h3Div = document.createElement('div');
             let h3 = document.createElement('h3');
@@ -65,38 +64,30 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
             //inner loop that counts down from 99 that returns first statement if >1 or second statement if = 1.
-            for (i = 10; i > 0; i--) {
+            for (i = 99; i > 0; i--) {
 
                 if (i > 1) {
 
-                    //let pDiv = document.createElement('div');
-                    let p = document.createElement('p');
-                    let pLyrics = document.createTextNode(lyrics);
-                    p.appendChild(pLyrics);
+                    var p = document.createElement('p');
+                    p.innerText = i + ' lines of code in a file, ' + i + ' lines of code; ' + friendsName[j] + ' strikes one out, clears it all out, \n';
                     h3Div.appendChild(p);
                     divContainer.appendChild(h3Div);
-                    //document.body.appendChild(p);
-                    
 
-                    lyrics = i + ' lines of code in a file, ' + i + ' lines of code; ' + friendsName[j] + ' strikes one out, clears it all out, \n';
                 }
                 else {
 
-                    //let pDiv1 = document.createElement('div');
-                    let p1 = document.createElement('p');
-                    let pLyrics1 = document.createTextNode(lyrics1);
-                    p1.appendChild(pLyrics1);
+                    var p1 = document.createElement('p');
+                    p1.innerText = i + ' line of code in a file, ' + i + ' line of code; ' + friendsName[j] + ' strikes one out, clears it all out, no more lines of code in the file. \n';
                     h3Div.appendChild(p1);
                     divContainer.appendChild(h3Div);
 
-                    lyrics1 = i + ' line of code in a file, ' + i + ' line of code; ' + friendsName[j] + ' strikes one out, clears it all out, no more lines of code in the file. \n';
                 }
             }
 
 
 
         }
-        
+
 
 
 
