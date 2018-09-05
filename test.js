@@ -33,9 +33,6 @@ window.addEventListener('DOMContentLoaded', function () {
     divContainer.appendChild(h1Div);
     h1.className = 'h1';
 
-    //let div = document.createElement('div');
-    //div.className = 'friend';
-    //divContainer.appendChild(div);
 
 
     //global variables 
@@ -54,13 +51,14 @@ window.addEventListener('DOMContentLoaded', function () {
             //storing name from array in variable
             name = friendsName[j]
 
-            div.className = 'friend';
+            //created h3 div/tag with classname = friend and appending friend's name from array to each H3.
             let h3Div = document.createElement('div');
             let h3 = document.createElement('h3');
             let h3Friend = document.createTextNode(name);
             h3.appendChild(h3Friend);
             h3Div.appendChild(h3);
             divContainer.appendChild(h3Div);
+            h3Div.className = 'friend';
 
 
             //inner loop that counts down from 99 that returns first statement if >1 or second statement if = 1.
@@ -68,6 +66,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
                 if (i > 1) {
 
+                    //Created p div/tag with a check if 'i' is great than 1, and appended lyrics of song to p tag.
                     var p = document.createElement('p');
                     p.innerText = i + ' lines of code in a file, ' + i + ' lines of code; ' + friendsName[j] + ' strikes one out, clears it all out, \n';
                     h3Div.appendChild(p);
@@ -75,7 +74,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
                 }
                 else {
-
+                    //Created p div/tag with a check if 'i' is less than 1, and appended lyrics of song to p tag.
                     var p1 = document.createElement('p');
                     p1.innerText = i + ' line of code in a file, ' + i + ' line of code; ' + friendsName[j] + ' strikes one out, clears it all out, no more lines of code in the file. \n';
                     h3Div.appendChild(p1);
@@ -87,12 +86,6 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
         }
-
-
-
-
-
-
 
     });
 
